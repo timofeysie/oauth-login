@@ -1,2 +1,6 @@
 # exclude build platforms
 /ionic-app/platforms/
+/phonegap-js-app/node_modules
+/phonegap-js-app/platforms
+.cordova
+.DS_Store

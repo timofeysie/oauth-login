@@ -2,10 +2,11 @@
 var app = angular.module('starter', ['ionic', 'ngStorage', 'ngCordova'])
 
 var fb_clientId = "1442923555932613";
+//var google_clientId = "894630188452-c1vat825u58ohi9pqn85kp78gfgcnd5i.apps.googleusercontent.com";
+var google_clientId = "14325430122.apps.googleusercontent.com";
+var google_clientSecret = "R_JnLzpMcNY4i-apFkCdeb6O";
 var google_requestToken = "";
 var google_accessToken = "";
-var google_clientId = "894630188452-c1vat825u58ohi9pqn85kp78gfgcnd5i.apps.googleusercontent.com";
-var google_clientSecret = "R_JnLzpMcNY4i-apFkCdeb6O";
 
 app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -38,10 +39,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'FeedController'
         })
         .state('secure', {
-                url: '/secure',
-                templateUrl: 'templates/secure.html',
-                controller: 'SecureController'
-            });
+            url: '/secure',
+            templateUrl: 'templates/secure.html',
+            controller: 'SecureController'
+        });
     $urlRouterProvider.otherwise('/login');
 });
 
@@ -55,14 +56,14 @@ app.controller("LoginController", function($scope, $http, $cordovaOauth, $localS
             console.log(error);
         });
     };
+
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
- 
     $scope.google_login = function() {
-        var ref = window.open('https://accounts.google.com/o/oauth2/auth?client_id=' + googl_clientId + '&redirect_uri=http://localhost/callback&scope=https://www.googleapis.com/auth/urlshortener&approval_prompt=force&response_type=code&access_type=offline', '_blank', 'location=no');
+        var ref = window.open('https://accounts.google.com/o/oauth2/auth?client_id='+googl_clientId+'&redirect_uri=http://localhost/callback&scope=https://www.googleapis.com/auth/urlshortener&approval_prompt=force&response_type=code&access_type=offline', '_blank', 'location=no');
         ref.addEventListener('loadstart', function(event) { 
             if((event.url).startsWith("http://localhost/callback")) {
                 google_requestToken = (event.url).split("code=")[1];
-                $http({method: "post", url: "https://accounts.google.com/o/oauth2/token", data: "client_id=" + google_clientId + "&client_secret=" + google_clientSecret + "&redirect_uri=http://localhost/callback" + "&grant_type=authorization_code" + "&code=" + google_requestToken })
+                $http({method: "post", url: "https://accounts.google.com/o/oauth2/token", data: "client_id="+google_clientId+"&client_secret=" + google_clientSecret + "&redirect_uri=http://localhost/callback" + "&grant_type=authorization_code" + "&code=" + google_requestToken })
                     .success(function(data) {
                         google_accessToken = data.access_token;
                         $location.path("/secure");

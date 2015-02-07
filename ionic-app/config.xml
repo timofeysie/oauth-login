@@ -16,4 +16,35 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <preference name="SplashScreenDelay" value="10000" />
+
+  <!--icon src="shared/icons/icon.png" /-->
+  <!--icon src="platforms/ios/OauthLogin/Resources/icons/icon.png" /-->
+
+<platform name="android">
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="shared/splash-land-hdpi.png" density="land-hdpi"/>
+    <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
+    <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
+    <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+    <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+    <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+</platform>
+
+<platform name="ios">
+    <!-- images are determined by width and height. The following are supported -->
+    <splash src="shared/splash/Default~iphone.png" width="320" height="480"/>
+    <splash src="shared/splash/Default@2x~iphone.png" width="640" height="960"/>
+    <splash src="shared/splash/Default-Portrait~ipad.png" width="768" height="1024"/>
+    <splash src="shared/splash/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+    <splash src="shared/splash/Default-Landscape~ipad.png" width="1024" height="768"/>
+    <splash src="shared/splash/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+    <splash src="shared/splash/Default-568h@2x~iphone.png" width="640" height="1136"/>
+    <splash src="shared/splash/Default-667h.png" width="750" height="1334"/>
+    <splash src="shared/splash/Default-736h.png" width="1242" height="2208"/>
+    <splash src="shared/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
+</platform>
+
 </widget>

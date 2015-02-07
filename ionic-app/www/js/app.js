@@ -1,9 +1,10 @@
 // Based on the Ionic Starter App by Nic Raboy.
 var app = angular.module('starter', ['ionic', 'ngStorage', 'ngCordova'])
 
-var fb_clientId = "your_facebook_client_id_goes_here";
-var google_clientId = "your_google_client_id_goes_here";
-var google_clientSecret = "your_google_client_id_goes_here";
+var fb_clientId = "1442923555932613";
+//var google_clientId = "894630188452-c1vat825u58ohi9pqn85kp78gfgcnd5i.apps.googleusercontent.com";
+var google_clientId = "14325430122.apps.googleusercontent.com";
+var google_clientSecret = "R_JnLzpMcNY4i-apFkCdeb6O";
 var google_requestToken = "";
 var google_accessToken = "";
 
@@ -38,10 +39,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'FeedController'
         })
         .state('secure', {
-                url: '/secure',
-                templateUrl: 'templates/secure.html',
-                controller: 'SecureController'
-            });
+            url: '/secure',
+            templateUrl: 'templates/secure.html',
+            controller: 'SecureController'
+        });
     $urlRouterProvider.otherwise('/login');
 });
 
@@ -55,8 +56,8 @@ app.controller("LoginController", function($scope, $http, $cordovaOauth, $localS
             console.log(error);
         });
     };
+
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
- 
     $scope.google_login = function() {
         var ref = window.open('https://accounts.google.com/o/oauth2/auth?client_id='+googl_clientId+'&redirect_uri=http://localhost/callback&scope=https://www.googleapis.com/auth/urlshortener&approval_prompt=force&response_type=code&access_type=offline', '_blank', 'location=no');
         ref.addEventListener('loadstart', function(event) { 
