@@ -50,13 +50,15 @@ Currently works with Facebook OAuth.  Working on Google+.
 
 This is normally only done on Mac and requires an Apple Developers license.
 For Android, you can use the debug.keystore in the ant.properties file and copy the .apk file from the directory below to you device. 
-```phonegap-js-app/platforms/android/ant-build/CordovaApp-debug.apk```
+``phonegap-js-app/platforms/android/ant-build/CordovaApp-debug.apk``
+
 
 ## Notes
 
 Be aware that the the code for Android apk files can be read by unzipping the repository and therefore you should find a alternative method for storing your private ids.  One solution by [Lam Tran]([I'm an inline-style link](https://www.google.com)) states that he "sends the code value up to my server. I then do the call to Google on the server to get the access_token. This way, the client_secret lives on the server".
 
 In the comments Lam points out that you should authenticate with your own server before authenticating with Google so that you know you are talking to your own backend and not someone elses.
+
 
 ## Links
 
