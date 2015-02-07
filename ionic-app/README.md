@@ -31,7 +31,7 @@ You will want to replace **CLIENT_ID_HERE** with the official key.
 Usage
 -------------
 
-With this example project configured on your computer, run the following from the Terminal or command prompt:
+With this example project configured on your computer, run the following from the Terminal or command prompt within the ionic-app directory:
 
     $ ionic build android
 
