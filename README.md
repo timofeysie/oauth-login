@@ -15,20 +15,18 @@ This project works with Google+ only.  You must replace your Google+ app credent
 
 # Running the example
 
-1. from the phonegapp-js-app directory run:
-```npm install```
-2. Add a platform, for example ios 
-```cordova platform add ios```
-3. Build the platform's project 
-```cordova build ios```
-4. Launch the platform's simulator 
-```cordova emulate ios```
-5. Run on a device.  
-Alternatively, you can run the iOS project by double clicking on the X code project file in the following directory:
+1. from the phonegapp-js-app directory run:```$ npm install```
+2. Add a platform, for example ios: ```$ cordova platform add ios```
+3. Build the platform's project: ```$cordova build ios```
+4. Launch the platform's simulator: ```cordova emulate ios```
+5. Run on a device.  The iOS project by double clicking on the X code project file in the following directory:
 ```ionic-app/platforms/ios/GoogleOauthPhonegap.xcodeproj```
+
 This is normally only done on Mac and requires an Apple Developers license.
 For Android, you can use the debug.keystore in the ant.properties file and copy the .apk file from the directory below to you device. 
+
 ```ionic-app/platforms/android/ant-build/CordovaApp-debug.apk```
+
 
 ## Ionic App
 
@@ -41,16 +39,11 @@ Currently works with Facebook OAuth.  Working on Google+.
 
 # Running the example
 
-1. from the ionic-aoo directory:
-```$ npm install```
-2. Add a platform
-```$ ionic platform add ios/android
-3. Build the app
-```$ ionic build ios/android
-4. Test (You must have appropriate emulators installed for this step)
-```$ ionic emulate ios/android
-5. Run on a device.  
-Alternatively, you can run the iOS project by double clicking on the X code project file in the following directory:
+1. from the ionic-aoo directory: ```$ npm install```
+2. Add a platform: ```$ ionic platform add ios/android```
+3. Build the app: ```$ ionic build ios/android```
+4. Test (You must have appropriate emulators installed for this step):```$ ionic emulate ios/android```
+5. Run on a device.  The iOS project by double clicking on the X code project file in the following directory:
 ```phonegap-js-app/platforms/ios/GoogleOauthPhonegap.xcodeproj```
 This is normally only done on Mac and requires an Apple Developers license.
 For Android, you can use the debug.keystore in the ant.properties file and copy the .apk file from the directory below to you device. 
